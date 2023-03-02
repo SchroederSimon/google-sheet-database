@@ -16,18 +16,24 @@ function App(): JSX.Element {
   }, []);
 
   return (
-    <div>
+    <div className="products-container">
       <h1>Products</h1>
-
-      {
-        products.map((product, index) => (
-          <div key={index}>
-            <h1>{product.name}</h1>
-            <h2>{product.price}</h2>
-          </div>
-        ))
-      }
-
+      <div className="cards-container">
+        {
+          products.map((product, index) => (
+            <div className="cards"
+              key={product.code}
+            >
+              <div className="card-information">
+                <img src={product.image} alt={product.alt} />
+                <h1>{product.name}</h1>
+                <h2>{product.price}</h2>
+                <p>{product.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   );
 }

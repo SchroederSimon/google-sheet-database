@@ -5,6 +5,8 @@ export type Products = {
     name: string;
     price: number;
     image?: string;
+    alt?: string;
+    description?: string;
 }
 
 const api = {
